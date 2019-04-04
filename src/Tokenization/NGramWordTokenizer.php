@@ -48,12 +48,12 @@ class NGramWordTokenizer extends WordTokenizer
     private function getNgrams(array $match, int $n = 2): array
     {
         $ngrams = [];
-        $len    = count($match);
+        $len = count($match);
         for ($i = 0; $i < $len; $i++) {
             if ($i > ($n - 2)) {
                 $ng = '';
                 for ($j = $n - 1; $j >= 0; $j--) {
-                    $ng .= ' ' . $match[$i - $j];
+                    $ng .= ' '.$match[$i - $j];
                 }
                 $ngrams[] = trim($ng);
             }
